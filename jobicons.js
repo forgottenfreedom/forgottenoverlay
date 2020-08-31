@@ -157,7 +157,7 @@ function updateEncounter(data) {
 }
 
 function updateCombatantListHeader() {
-    
+
 }
 
 function updateCombatantList(data) {
