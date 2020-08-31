@@ -82,12 +82,33 @@
                 let divstats = document.createElement("div");
                 let wrapper =document.createElement("div");
                 let job = parseActFormat("{Job}", combatant);
-                let img = jobs[job].jobicon;
-                let role = jobs[job].role;
-                let rolecolor = pickrolecolor (role);
-                let jobcolor = jobs[job].jobcolor;
                 let name = parseActFormat ("{name}", combatant);
+                let dmgpct = parseActFormat("{damage%}", combatant);
                 let bottom = document.createElement("div");
+                let dmg = document.createElement("div");
+
+                if (jobs[job].jobicon != 'undefined') {
+                    let img = jobs[job].jobicon;
+                }
+                else { 
+                    let img = 'https://xivapi.com/img-misc/lodestone/status.png'
+                };
+
+                if (jobs[job].role !== 'undefined') {
+                    let role = jobs[job].role;
+                    let rolecolor = pickrolecolor (role);
+                }
+                else {
+                    let role = null;
+                    let rolecolor = '#fff'
+                };
+
+                if (jobs[job].jobcolor !== 'undefined') {
+                    let jobcolor = jobs[job].jobcolor;
+                }
+                else {
+                    let jobcolor = '#fff'
+                };
 
 
                 divname.className = "table-name";
@@ -99,6 +120,7 @@
                 wrapper.className = "table";
                 wrapper.style = `background-color: ${rolecolor}`
                 bottom.className = "bottom";
+                dmg.style = `background-color: ${jobcolor}; width: ${dmgpct}; height: 2px`
 
 
 
@@ -106,6 +128,7 @@
                 bottom.appendChild(divstats);
                 wrapper.appendChild(divname);
                 wrapper.appendChild(bottom);
+                wrapper.appendChild(dmg);
                 newdiv.appendChild(wrapper);
 
                // combatantIndex++;
