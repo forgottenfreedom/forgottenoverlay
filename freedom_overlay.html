@@ -87,27 +87,18 @@
                 let bottom = document.createElement("div");
                 let dmg = document.createElement("div");
 
-                if (jobs[job].jobicon != 'undefined') {
-                    let img = jobs[job].jobicon;
+
+                if (jobs[job] !== undefined) {
+                    img = jobs[job].jobicon;
+                    role = jobs[job].role;
+                    rolecolor = pickrolecolor (role);
+                    jobcolor = jobs[job].jobcolor;
                 }
                 else { 
-                    let img = 'https://xivapi.com/img-misc/lodestone/status.png'
-                };
-
-                if (jobs[job].role !== 'undefined') {
-                    let role = jobs[job].role;
-                    let rolecolor = pickrolecolor (role);
-                }
-                else {
-                    let role = null;
-                    let rolecolor = '#fff'
-                };
-
-                if (jobs[job].jobcolor !== 'undefined') {
-                    let jobcolor = jobs[job].jobcolor;
-                }
-                else {
-                    let jobcolor = '#fff'
+                    img = 'https://xivapi.com/img-misc/lodestone/status.png';
+                    role = null;
+                    rolecolor = '#000'
+                    jobcolor = '#fff'
                 };
 
 
