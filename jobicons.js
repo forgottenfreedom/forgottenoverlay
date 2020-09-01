@@ -7,82 +7,82 @@ const jobs = {
     Dnc: {
         jobicon: 'https://xivapi.com/cj/1/dancer.png',
         role: 'dps',
-        jobcolor: '#6ee1d6'
+        jobcolor: '#e2b0af'
     },
     Brd: {
         jobicon: 'https://xivapi.com/cj/1/bard.png',
         role: 'dps',
-        jobcolor: '#6ee1d6'
+        jobcolor: '#6fba5e'
     },
     Whm: {
         jobicon: 'https://xivapi.com/cj/1/whitemage.png',
         role: 'heal',
-        jobcolor: '#6ee1d6'
+        jobcolor: '#f0f0cf'
     },
     Ast: {
         jobicon: 'https://xivapi.com/cj/1/astrologian.png',
         role: 'heal',
-        jobcolor: '#6ee1d6'
+        jobcolor: '#ffe74a'
     },
     Sch: {
         jobicon: 'https://xivapi.com/cj/1/scholar.png',
         role: 'heal',
-        jobcolor: '#6ee1d6'
+        jobcolor: '#7657f0'
     },
     War: {
         jobicon: 'https://xivapi.com/cj/1/warrior.png',
         role: 'tank',
-        jobcolor: '#6ee1d6'
+        jobcolor: '#c21c21'
     },
     Drk: {
         jobicon: 'https://xivapi.com/cj/1/darkknight.png',
         role: 'tank',
-        jobcolor: '#6ee1d6'
+        jobcolor: '#ac26cc'
     },
     Gnb: {
         jobicon: 'https://xivapi.com/cj/1/gunbreaker.png',
         role: 'tank',
-        jobcolor: '#6ee1d6'
+        jobcolor: '#796d30'
     },
     Pld: {
         jobicon: 'https://xivapi.com/cj/1/paladin.png',
         role: 'tank',
-        jobcolor: '#6ee1d6'
+        jobcolor: '#85d2e6'
     },
     Blm: {
         jobicon: 'https://xivapi.com/cj/1/blackmage.png',
         role: 'dps',
-        jobcolor: '#6ee1d6'
+        jobcolor: '#8479d6'
     },
     Rdm: {
         jobicon: 'https://xivapi.com/cj/1/redmage.png',
         role: 'dps',
-        jobcolor: '#6ee1d6'
+        jobcolor: '#c55657'
     },
     Smn: {
         jobicon: 'https://xivapi.com/cj/1/summoner.png',
         role: 'dps',
-        jobcolor: '#6ee1d6'
+        jobcolor: '#127478'
     },
     Nin: {
         jobicon: 'https://xivapi.com/cj/1/ninja.png',
         role: 'dps',
-        jobcolor: '#6ee1d6'
+        jobcolor: '#8b1964'
     },
     Mnk: {
         jobicon: 'https://xivapi.com/cj/1/monk.png',
         role: 'dps',
-        jobcolor: '#6ee1d6'
+        jobcolor: '#d69c00'
     },
     Sam: {
         jobicon: 'https://xivapi.com/cj/1/samurai.png',
         role: 'dps',
-        jobcolor: '#6ee1d6'
+        jobcolor: '#c16d04'
     },
     Drg: {
         jobicon: 'https://xivapi.com/cj/1/dragoon.png',
         role: 'dps',
-        jobcolor: '#6ee1d6'
+        jobcolor: '#2d64cd'
     },
     Blu: {
         jobicon: 'https://xivapi.com/cj/1/bluemage.png',

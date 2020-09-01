@@ -66,16 +66,26 @@ function updateCombatantList(data) {
 
 //     let combatantIndex = 0;
     for (let combatantName in data.Combatant) {
+
         let combatant = data.Combatant[combatantName];
+        let job = parseActFormat("{Job}", combatant);
+
+        if (job in jobs === false) {
+            continue;
+        };
+
+
+
         let divname = document.createElement("div");
         let divdps = document.createElement("div");
         let divstats = document.createElement("div");
         let wrapper =document.createElement("div");
-        let job = parseActFormat("{Job}", combatant);
+
         let name = parseActFormat ("{name}", combatant);
         let dmgpct = parseActFormat("{damage%}", combatant);
         let bottom = document.createElement("div");
         let dmg = document.createElement("div");
+        let stats = parseActFormat ("{crithit%}/{DirectHitPct}/{CritDirectHitPct}", combatant);
 
         if (jobs[job] !== undefined) {
             img = jobs[job].jobicon;
@@ -104,9 +114,9 @@ function updateCombatantList(data) {
 
 
         divdps.className = "table-dps";
-        divdps.innerHTML = parseActFormat ("{encdps}", combatant);
+        divdps.innerHTML = parseActFormat ("{ENCDPS}", combatant);
         divstats.className = "table-stats";
-        divstats.innerHTML = parseActFormat ("{crithit%}/{DirectHitPct}/{CritDirectHitPct}", combatant);
+        divstats.innerHTML = stats.replace(/%/g, "");
         wrapper.className = "table";
         wrapper.style = `background-color: ${rolecolor}`
         bottom.className = "bottom";
