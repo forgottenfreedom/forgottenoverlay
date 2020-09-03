@@ -10,7 +10,6 @@ function blur () {
     else {
         IsBlur = true;
     }
-    console.log(IsBlur)
     bluring ();
 }
 

@@ -88,6 +88,51 @@ const jobs = {
         jobicon: 'https://xivapi.com/cj/1/bluemage.png',
         role: 'dps',
         jobcolor: '#6ee1d6'
+    },
+    Acn: {
+        jobicon: 'https://xivapi.com/cj/1/arcanist.png',
+        role: 'dps',
+        jobcolor: '#CE5252'
+    },
+    Arc: {
+        jobicon: 'https://xivapi.com/cj/1/archer.png',
+        role: 'dps',
+        jobcolor: '#CE5252'
+    },
+    Lnc: {
+        jobicon: 'https://xivapi.com/cj/1/lancer.png',
+        role: 'dps',
+        jobcolor: '#CE5252'
+    },
+    Pgl: {
+        jobicon: 'https://xivapi.com/cj/1/puglist.png',
+        role: 'dps',
+        jobcolor: '#CE5252'
+    },
+    Rog: {
+        jobicon: 'https://xivapi.com/cj/1/rogue.png',
+        role: 'dps',
+        jobcolor: '#CE5252'
+    },
+    Thm: {
+        jobicon: 'https://xivapi.com/cj/1/thaumaturge.png',
+        role: 'dps',
+        jobcolor: '#CE5252'
+    },
+    Cnj: {
+        jobicon: 'https://xivapi.com/cj/1/conjurer.png',
+        role: 'heal',
+        jobcolor: '#5AC629'
+    },
+    Gla: {
+        jobicon: 'https://xivapi.com/cj/1/gladiator.png',
+        role: 'tank',
+        jobcolor: '#6B94E7'
+    },
+    Mrd: {
+        jobicon: 'https://xivapi.com/cj/1/marauder.png',
+        role: 'tank',
+        jobcolor: '#6B94E7'
     }
 }
 

@@ -118,7 +118,7 @@ function updateCombatantList(data) {
         divstats.className = "table-stats";
         divstats.innerHTML = stats.replace(/%/g, "");
         wrapper.className = "table";
-        wrapper.style = `background-color: ${rolecolor}`
+        wrapper.style = `background-color: ${jobcolor}; border-color: ${rolecolor}`
         bottom.className = "bottom";
         dmg.style = `background-color: ${jobcolor}; width: ${dmgpct}; height: 2px`
 
