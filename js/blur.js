@@ -17,13 +17,13 @@ function bluring () {
     let ToBlur = document.getElementsByName("blur");
 
     if (IsBlur == true) {
-        ToBlur.forEach(function(item,index,array) {
+        ToBlur.forEach(function(item) {
             item.className = "blur";
         })}
    
     else if (IsBlur == false){
-        ToBlur.forEach(function(item,index,array) {
-            item.className = "";
+        ToBlur.forEach(function(item) {
+            item.className = "noblur";
     })}
     
     else {

@@ -64,15 +64,29 @@ function updateCombatantList(data) {
     newdiv.id = "combatantdiv";
     newdiv.className = "wrapper";
 
-//     let combatantIndex = 0;
+    let combatantIndex = 0;
     for (let combatantName in data.Combatant) {
 
         let combatant = data.Combatant[combatantName];
         let job = parseActFormat("{Job}", combatant);
+        let name = parseActFormat ("{name}", combatant);
+        let NameRegEx = /^[a-zA-Z-' ]{1,21}/g;
+        let death = parseActFormat("{deaths}", combatant);
+
+        if (combatantIndex > 7 ) {
+            continue;
+        };
 
         if (job in jobs === false) {
             continue;
         };
+
+        if (NameRegEx.test(name) === false) {
+            continue;
+        };
+
+        let playername = ChangeName(name);
+        let deth = deths(death);
 
 
 
@@ -80,11 +94,9 @@ function updateCombatantList(data) {
         let divdps = document.createElement("div");
         let divstats = document.createElement("div");
         let wrapper =document.createElement("div");
-
-        let name = parseActFormat ("{name}", combatant);
-        let dmgpct = parseActFormat("{damage%}", combatant);
         let bottom = document.createElement("div");
         let dmg = document.createElement("div");
+        let dmgpct = parseActFormat("{damage%}", combatant);
         let stats = parseActFormat ("{crithit%}/{DirectHitPct}/{CritDirectHitPct}", combatant);
 
         if (jobs[job] !== undefined) {
@@ -103,10 +115,14 @@ function updateCombatantList(data) {
         divname.className = "table-name";
 
         if (IsBlur == true) {
-            divname.innerHTML = `<img src="${img}" class = job-image>` + `<span name="blur" class="blur">${name}</span>`;
+            divname.innerHTML = `<img src="${img}" class = job-image>` + 
+                                `<span name="blur" class="blur">${playername}</span>` +
+                                `<span name="deth" class="deth">${deth}`;
         }
         else if (IsBlur == false) {
-            divname.innerHTML = `<img src="${img}" class = job-image>` + `<span name="blur">${name}</span>`;
+            divname.innerHTML = `<img src="${img}" class = job-image>` + 
+                                `<span name="blur" class="noblur">${playername}</span>` +
+                                `<span name="deth" class="deth">${deth}`;
         }
         else {
             return
@@ -118,7 +134,7 @@ function updateCombatantList(data) {
         divstats.className = "table-stats";
         divstats.innerHTML = stats.replace(/%/g, "");
         wrapper.className = "table";
-        wrapper.style = `background-color: ${jobcolor}; border-color: ${rolecolor}`
+        wrapper.style = `background-color: ${rolecolor}; border-color: ${jobcolor}`
         bottom.className = "bottom";
         dmg.style = `background-color: ${jobcolor}; width: ${dmgpct}; height: 2px`
 
@@ -129,7 +145,7 @@ function updateCombatantList(data) {
         wrapper.appendChild(dmg);
         newdiv.appendChild(wrapper);
 
-        // combatantIndex++;
+        combatantIndex++;
     }
     
     if (olddiv != void(0)) {

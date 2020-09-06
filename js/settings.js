@@ -1,6 +1,39 @@
-window.addEventListener("contextmenu", settings);
+let NameSetting = 0;
 
 
-function settings () {
-    window.open('settings.html' ,'', 'width = 200, height = 300');
+const NameRadios = document.name.selectname;
+const input = document.PlayerName.player;
+
+
+input.addEventListener('change', updateName);
+
+function updateName (e) {
+  localStorage.setItem("PlayerName", e.target.value);
+  console.log(e.target.value)
+}
+  
+
+
+for (let i = 0; i < NameRadios.length; i++) {
+  NameRadios[i].onclick = function () {
+    if (this !== NameSetting) {
+      NameSetting = this;
+    }
+      NameSetting = this.value;
+      localStorage.setItem("NameSetting", NameSetting);
+      console.log(NameSetting);
+  }
+}
+
+window.onload = function () {
+  NameRadios[localStorage.getItem("NameSetting")].checked = true;
+
+  let LocalPlayer = localStorage.getItem("PlayerName");
+
+  if (LocalPlayer == null) {
+    input.value = "YOU";
+  }
+  else {
+    input.value = LocalPlayer;
+  }
 }

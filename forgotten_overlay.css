@@ -61,6 +61,23 @@ body {
 }
 
 .blur {
+    width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
     filter: blur(3px);
     -webkit-filter: blur(3px);
+}
+
+.noblur {
+    width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.deth {
+    width: 13px;
+    text-align: right;
+    font-weight: 900;
+	color: #ffcdd2 !important;
+	text-shadow: -1px 0 3px #fc5161, 0 1px 3px #fc5161, 1px 0 3px #fc5161, 0 -1px 3px #fc5161 !important;
 }
