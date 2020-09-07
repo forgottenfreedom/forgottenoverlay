@@ -1,5 +1,6 @@
 let encounterDefine = "{title} / Time: {duration} / DPS: {ENCDPS}";
 let IsBlur = false;
+let dmgpctglobal = 100;
 
 let useHTMLEncounterDefine = false;
 //        document.addEventListener("onOverlayStateUpdate", function (e) {
@@ -72,6 +73,14 @@ function updateCombatantList(data) {
         let name = parseActFormat ("{name}", combatant);
         let NameRegEx = /^[a-zA-Z-' ]{1,21}/g;
         let death = parseActFormat("{deaths}", combatant);
+        let dmgpct = parseActFormat("{damage%}", combatant);
+        let dmgnumber = Number(dmgpct.slice(0, dmgpct.indexOf('%')));
+
+        if (combatantIndex == 0) {
+            dmgpctglobal = dmgnumber;
+        };
+
+        let relativdmgpct = (dmgnumber/dmgpctglobal)*100 + "%";
 
         if (combatantIndex > 7 ) {
             continue;
@@ -96,7 +105,6 @@ function updateCombatantList(data) {
         let wrapper =document.createElement("div");
         let bottom = document.createElement("div");
         let dmg = document.createElement("div");
-        let dmgpct = parseActFormat("{damage%}", combatant);
         let stats = parseActFormat ("{crithit%}/{DirectHitPct}/{CritDirectHitPct}", combatant);
 
         if (jobs[job] !== undefined) {
@@ -136,7 +144,7 @@ function updateCombatantList(data) {
         wrapper.className = "table";
         wrapper.style = `background-color: ${rolecolor}; border-color: ${jobcolor}`
         bottom.className = "bottom";
-        dmg.style = `background-color: ${jobcolor}; width: ${dmgpct}; height: 2px`
+        dmg.style = `background-color: ${jobcolor}; width: ${relativdmgpct}; height: 2px`
 
         bottom.appendChild(divdps);
         bottom.appendChild(divstats);
