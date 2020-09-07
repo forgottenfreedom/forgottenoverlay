@@ -38,3 +38,22 @@ function deths (death) {
         return ' '
     }
 }
+
+function getLayout () {
+    if (localStorage.getItem("LayoutSetting") == null) {
+        LayoutSetting = 0;
+    }
+    else {
+        LayoutSetting = localStorage.getItem("LayoutSetting");
+    };
+
+    if (LayoutSetting == 0) {
+        return 1300;
+    }
+    if (LayoutSetting == 1) {
+        return 700;
+    }
+    if (LayoutSetting == 2) {
+        return 300;
+    }
+}

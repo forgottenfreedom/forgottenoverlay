@@ -1,7 +1,8 @@
 let NameSetting = 0;
-
+let LayoutSetting = 0;
 
 const NameRadios = document.name.selectname;
+const LayoutRadios = document.name.layout;
 const input = document.PlayerName.player;
 
 
@@ -25,8 +26,19 @@ for (let i = 0; i < NameRadios.length; i++) {
       }
 }
 
+for (let i = 0; i < LayoutRadios.length; i++) {
+  LayoutRadios[i].onclick = function () {
+    if (this !== LayoutSetting) {
+      LayoutSetting = this;
+    }
+    LayoutSetting = this.value;
+      localStorage.setItem("LayoutSetting", LayoutSetting);
+      }
+}
+
 window.onload = function () {
   NameRadios[localStorage.getItem("NameSetting")].checked = true;
+  LayoutRadios[localStorage.getItem("LayoutSetting")].checked = true;
 
   let LocalPlayer = localStorage.getItem("PlayerName");
 

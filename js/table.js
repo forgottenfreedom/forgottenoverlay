@@ -62,8 +62,10 @@ function updateCombatantList(data) {
     let div = document.getElementById("combatants");
     let olddiv = document.getElementById("combatantdiv");
     let newdiv = document.createElement("div");
+    let Layout = getLayout ();
     newdiv.id = "combatantdiv";
     newdiv.className = "wrapper";
+    newdiv.style = `width: ${Layout}px`
 
     let combatantIndex = 0;
     for (let combatantName in data.Combatant) {
@@ -96,6 +98,7 @@ function updateCombatantList(data) {
 
         let playername = ChangeName(name);
         let deth = deths(death);
+        
 
 
 
