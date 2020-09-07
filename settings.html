@@ -1,16 +1,16 @@
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="css/settings.css">
         <script src="js/settings.js" defer></script>
 
     </head>
     <body>
-        <div>
-            <form name="PlayerName" action="javascript:void(0)">
+        <div class="outline">
+        <div class="playertextdiv">
+            <form name="PlayerName" action="javascript:void(0)" class="playertextfield">
                 <label for="PlayerName">PlayerName</label>
                 <input type="text" name="player" value="YOU">
             </form>
-        </div>
-        <div>
             <form name="name">
             <input type="radio" id="FullName" name="selectname" value="0">
             <label for="FullName">Forgotten Freedom</label><br>
@@ -19,9 +19,24 @@
             <input type="radio" id="FirstName" name="selectname" value="2">
             <label for="FirstName">Forgotten F.</label>
             </form>
+        </div>
 
+        <div class="table" style="background-color: rgb(132, 49, 49); border-color: rgb(197, 86, 87);">
+            <div class="table-name">
+                <img src="https://xivapi.com/cj/1/redmage.png" class="job-image">
+                    <span name="blur" class="noblur">Forgotten Freedom</span>
+                    <span name="deth" class="deth"> </span>
+            </div>
+            <div class="bottom">
+                <div class="table-dps">11473</div>
+                <div class="table-stats">11/18/2</div>
+            </div>
+        <div style="background-color: rgb(197, 86, 87); width: 41%; height: 2px;">
+        </div>
+        </div>
+        </div>
 
         
-        </div>
+
     </body>
 </html>
