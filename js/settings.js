@@ -21,8 +21,8 @@ for (let i = 0; i < NameRadios.length; i++) {
     }
       NameSetting = this.value;
       localStorage.setItem("NameSetting", NameSetting);
-      console.log(NameSetting);
-  }
+      ChangeName(NameSetting);
+      }
 }
 
 window.onload = function () {
@@ -35,5 +35,19 @@ window.onload = function () {
   }
   else {
     input.value = LocalPlayer;
+  }
+}
+
+function ChangeName (Setting) {
+  const name = document.getElementById("blur");
+
+  if (Setting == 0) {
+    name.textContent = "Forgotten Freedom";
+  }
+  if (Setting == 1) {
+    name.textContent = "F. F.";
+  }
+  if (Setting == 2) {
+    name.textContent = "Forgotten F.";
   }
 }
