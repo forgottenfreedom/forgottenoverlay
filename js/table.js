@@ -3,29 +3,12 @@ let IsBlur = false;
 let dmgpctglobal = 100;
 
 let useHTMLEncounterDefine = false;
-//        document.addEventListener("onOverlayStateUpdate", function (e) {
-//            if (!e.detail.isLocked) {
-//                displayResizeHandle();
-//            } else {
-//                hideResizeHandle();
-//            }
-//        });
-//
-//        function displayResizeHandle() {
-//            document.documentElement.classList.add("resizeHandle");
-//        }
-//
-//        function hideResizeHandle() {
-//            document.documentElement.classList.remove("resizeHandle");
-//        }
+
 addOverlayListener("CombatData", (e) => update(e));
 startOverlayEvents();
 
 function update(data) {
     updateEncounter(data);
-    if (document.getElementById("combatantTableHeader") == null) {
-        updateCombatantListHeader();
-    }
     updateCombatantList(data);
 }
 
@@ -51,10 +34,6 @@ function updateEncounter(data) {
     } else {
         encounterElem.innerHTML = parseActFormat(elementText, data.Encounter);
     }
-}
-
-function updateCombatantListHeader() {
-    
 }
 
 function updateCombatantList(data) {
