@@ -4,7 +4,19 @@ let LayoutSetting = 0;
 const NameRadios = document.name.selectname;
 const LayoutRadios = document.name.layout;
 const input = document.PlayerName.player;
+const highlight = document.highlight.highlightcheckbox
 
+highlight.addEventListener('change', ToHighlight);
+
+function ToHighlight() {
+  const name = document.getElementById('blur');
+  if (this.checked) {
+    name.className = 'noblurplayer';
+  }
+  else {
+    name.className = 'noblur';
+  };
+}
 
 input.addEventListener('change', updateName);
 

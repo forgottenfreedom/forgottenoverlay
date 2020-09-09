@@ -3,7 +3,7 @@
 }
 
 body {
-	color: #DED7BE;
+	color: #fff3c8;
 	text-shadow: -1px 0 2px #795516, 0 1px 2px #795516, 1px 0 2px #795516, 0 -1px 2px #795516;
 	font-weight: 300;
     white-space: nowrap;
@@ -69,7 +69,23 @@ body {
     -webkit-filter: blur(3px);
 }
 
+.blurplayer {
+    color: #fcffec;
+    width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+}
+
 .noblur {
+    width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.noblurplayer {
+    color: #fcffec;
     width: 100px;
     overflow: hidden;
     text-overflow: ellipsis;
