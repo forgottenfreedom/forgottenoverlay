@@ -92,7 +92,15 @@ function updateCombatantList(data) {
         if (jobs[job] !== undefined) {
             img = jobs[job].jobicon;
             role = jobs[job].role;
-            rolecolor = pickrolecolor (role);
+
+            if (localStorage.getItem("HighlightSetting") == 1) {
+                if (localStorage.getItem("PlayerName").toLowerCase() == name.toLowerCase()) {
+                    rolecolor = localStorage.getItem("PlayerColor");
+                }
+            }
+            else {
+                rolecolor = pickrolecolor (role);
+            };
             jobcolor = jobs[job].jobcolor;
         }
         else { 
