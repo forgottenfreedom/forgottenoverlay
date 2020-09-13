@@ -1,24 +1,36 @@
 let NameSetting = 0;
 let LayoutSetting = 0;
+let highlightsetting = 0;
 
 const NameRadios = document.name.selectname;
 const LayoutRadios = document.name.layout;
 const input = document.PlayerName.player;
 const highlight = document.highlight.highlightcheckbox
+const playercolor = document.highlight.playercolor
 
 highlight.addEventListener('change', ToHighlight);
+input.addEventListener('change', updateName);
+playercolor.addEventListener('change', changePlayercolor);
 
 function ToHighlight() {
-  const name = document.getElementById('blur');
   if (this.checked) {
-    name.className = 'noblurplayer';
+    highlightsetting = 1;
   }
   else {
-    name.className = 'noblur';
+    highlightsetting = 0;
   };
+  localStorage.setItem("HighlightSetting", highlightsetting)
+  changePlayercolor ();
 }
 
-input.addEventListener('change', updateName);
+function changePlayercolor () {
+  localStorage.setItem("PlayerColor", playercolor.value);
+
+  if (highlightsetting == 1) {
+  playercardcolor = document.getElementById("table");
+  playercardcolor.style = `background-color:${playercolor.value}`
+  }
+}
 
 function updateName (e) {
   localStorage.setItem("PlayerName", e.target.value);
