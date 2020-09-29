@@ -105,7 +105,7 @@ const jobs = {
         jobcolor: '#CE5252'
     },
     Pgl: {
-        jobicon: 'https://xivapi.com/cj/1/puglist.png',
+        jobicon: 'https://xivapi.com/cj/1/pugilist.png',
         role: 'dps',
         jobcolor: '#CE5252'
     },
