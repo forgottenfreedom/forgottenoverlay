@@ -36,8 +36,6 @@ function updateName (e) {
   localStorage.setItem("PlayerName", e.target.value);
   console.log(e.target.value)
 }
-  
-
 
 for (let i = 0; i < NameRadios.length; i++) {
   NameRadios[i].onclick = function () {

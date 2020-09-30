@@ -1,12 +1,10 @@
 window.addEventListener("contextmenu", settings);
 
-
 function settings () {
     window.open('settings.html' ,'', 'width = 600, height = 300');
 }
 
 function ChangeName (name) {
-
     if (localStorage.getItem("NameSetting") == null) {
         NameSetting = 0;
     }
