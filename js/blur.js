@@ -1,6 +1,5 @@
 const makeblur = document.getElementById("encounter");
 
-
 makeblur.addEventListener("click", blur);
 
 function blur () {
@@ -20,12 +19,10 @@ function bluring () {
         ToBlur.forEach(function(item) {
             item.className = "blur";
         })}
-   
     else if (IsBlur == false){
         ToBlur.forEach(function(item) {
             item.className = "noblur";
     })}
-    
     else {
         return
     }}

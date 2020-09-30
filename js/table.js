@@ -1,7 +1,6 @@
-let encounterDefine = "{title} / Time: {duration} / DPS: {ENCDPS}";
+let encounterDefine = "{title} | Time: {duration} | DPS: {ENCDPS}";
 let IsBlur = false;
 let dmgpctglobal = 100;
-
 let useHTMLEncounterDefine = false;
 
 addOverlayListener("CombatData", (e) => update(e));
@@ -13,31 +12,33 @@ function update(data) {
 }
 
 function updateEncounter(data) {
-    var encounterElem = document.getElementById('encounter');
+    let encounterElem = document.getElementById('encounter');
+    let elementText;
 
-    var elementText;
     if (typeof encounterDefine === 'function') {
         elementText = encounterDefine(data.Encounter);
         if (typeof elementText !== 'string') {
             console.log("updateEncounter: 'encounterDefine' is declared as function but not returns a value as string.");
             return;
         }
-    } else if (typeof encounterDefine === 'string') {
+    } 
+    else if (typeof encounterDefine === 'string') {
         elementText = parseActFormat(encounterDefine, data.Encounter);
-    } else {
+    }
+    else {
         console.log("updateEncounter: 'encounterDefine' should be string or function that returns string.");
         return;
     }
 
     if (!useHTMLEncounterDefine) {
         encounterElem.innerText = parseActFormat(elementText, data.Encounter);
-    } else {
+    } 
+    else {
         encounterElem.innerHTML = parseActFormat(elementText, data.Encounter);
     }
 }
 
 function updateCombatantList(data) {
-
     let div = document.getElementById("combatants");
     let olddiv = document.getElementById("combatantdiv");
     let newdiv = document.createElement("div");
@@ -48,7 +49,6 @@ function updateCombatantList(data) {
 
     let combatantIndex = 0;
     for (let combatantName in data.Combatant) {
-
         let combatant = data.Combatant[combatantName];
         let job = parseActFormat("{Job}", combatant);
         let name = parseActFormat ("{name}", combatant);
@@ -77,10 +77,6 @@ function updateCombatantList(data) {
 
         let playername = ChangeName(name);
         let deth = deths(death);
-        
-
-
-
         let divname = document.createElement("div");
         let divdps = document.createElement("div");
         let divstats = document.createElement("div");
@@ -126,7 +122,6 @@ function updateCombatantList(data) {
             return
         };
 
-
         divdps.className = "table-dps";
         divdps.innerHTML = parseActFormat ("{ENCDPS}", combatant);
         divstats.className = "table-stats";
@@ -155,27 +150,28 @@ function updateCombatantList(data) {
 }
 
 function parseActFormat(str, dictionary) {
-    var result = "";
-    var currentIndex = 0;
+    let result = "";
+    let currentIndex = 0;
     do {
-        var openBraceIndex = str.indexOf('{', currentIndex);
+        let openBraceIndex = str.indexOf('{', currentIndex);
         if (openBraceIndex < 0) {
             result += str.slice(currentIndex);
             break;
         }
         else {
             result += str.slice(currentIndex, openBraceIndex);
-            var closeBraceIndex = str.indexOf('}', openBraceIndex);
+            let closeBraceIndex = str.indexOf('}', openBraceIndex);
             if (closeBraceIndex < 0) {
                 // parse error!
                 console.log("parseActFormat: Parse error: missing close-brace for " + openBraceIndex.toString() + ".");
                 return "ERROR";
             }
             else {
-                var tag = str.slice(openBraceIndex + 1, closeBraceIndex);
+                let tag = str.slice(openBraceIndex + 1, closeBraceIndex);
                 if (typeof dictionary[tag] !== 'undefined') {
                     result += dictionary[tag];
-                } else {
+                } 
+                else {
                     console.log("parseActFormat: Unknown tag: " + tag);
                     result += "ERROR";
                 }
