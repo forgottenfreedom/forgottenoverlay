@@ -1,4 +1,14 @@
 const jobs = {
+    Rpr: {
+        jobicon: 'https://xivapi.com/cj/1/reaper.png',
+        role: 'dps',
+        jobcolor: '#6ee1d6'
+    },
+    Sge: {
+        jobicon: 'https://xivapi.com/cj/1/sage.png',
+        role: 'dps',
+        jobcolor: '#6ee1d6'
+    },
     Mch: {
         jobicon: 'https://xivapi.com/cj/1/machinist.png',
         role: 'dps',
