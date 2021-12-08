@@ -52,7 +52,7 @@ function updateCombatantList(data) {
         let combatant = data.Combatant[combatantName];
         let job = parseActFormat("{Job}", combatant);
         let name = parseActFormat ("{name}", combatant);
-        let NameRegEx = /^[a-zA-Z-' ]{1,21}/g;
+        let NameRegEx = /^[a-zA-Z-' ]{1,21} [a-zA-Z-' ]{1,21}/g;
         let death = parseActFormat("{deaths}", combatant);
         let dmgpct = parseActFormat("{damage%}", combatant);
         let dmgnumber = Number(dmgpct.slice(0, dmgpct.indexOf('%')));
